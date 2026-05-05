@@ -1,9 +1,10 @@
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Heart } from "lucide-react";
+import { SiLeetcode } from "react-icons/si";
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Github, href: "https://github.com/rohitkumarjangra2", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/rohit-kumar-ab478a292/", label: "LinkedIn" },
+  { icon: SiLeetcode, href: "https://leetcode.com/u/hVGnVHHhiJ/", label: "Twitter" },
 ];
 
 const footerLinks = [
@@ -26,7 +27,7 @@ export const Footer = () => {
               PM<span className="text-primary">.</span>
             </a>
             <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} Pedro Machado. All rights reserved.
+              © {currentYear} Rohit Kumar. All rights reserved.
             </p>
           </div>
 

@@ -14,20 +14,20 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "pedro@example.com",
-    href: "mailto:pedro@example.com",
+    value: "rohit2004jangra@gmail.com",
+    href: "mailto:rohit2004jangra@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+91 7404213524",
+    href: "tel:+917404213524",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA",
-    href: "#",
+    value: "Greater Noida, India",
+    href: "https://www.google.com/maps/place/Greater+Noida,+Uttar+Pradesh/@28.4753056,77.4761944,17.37z/data=!4m15!1m8!3m7!1s0x390ce5a43173357b:0x37ffce30c87cc03f!2sNoida,+Uttar+Pradesh!3b1!8m2!3d28.5355161!4d77.3910265!16zL20vMDN3dHow!3m5!1s0x390cea64b8f89aef:0xec0ccabb5317962e!8m2!3d28.4743879!4d77.5039904!16zL20vMGN3OXEy?authuser=0&entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D",
   },
 ];
 
@@ -63,9 +63,14 @@ export const Contact = () => {
         serviceId,
         templateId,
         {
+          from_name: formData.name,
+          to_name: "Rohit", // Optional: you can change this
+          from_email: formData.email,
+          reply_to: formData.email,
+          message: formData.message,
+          // Fallback to original names just in case
           name: formData.name,
           email: formData.email,
-          message: formData.message,
         },
         publicKey
       );
@@ -76,11 +81,11 @@ export const Contact = () => {
       });
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
-      console.error("EmailJS error:", error);
+      console.error("EmailJS error details:", err);
       setSubmitStatus({
         type: "error",
         message:
-          error.text || "Failed to send message. Please try again later.",
+          err?.text || "Failed to send message. Please try again later.",
       });
     } finally {
       setIsLoading(false);
@@ -143,6 +148,8 @@ export const Contact = () => {
                   Email
                 </label>
                 <input
+                  id="email"
+                  type="email"
                   required
                   placeholder="your@email.com"
                   value={formData.email}

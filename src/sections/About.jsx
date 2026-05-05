@@ -47,26 +47,39 @@ export const About = () => {
               </span>
             </h2>
 
-            <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
-              <p>
-                I'm a passionate software engineer with over 5 years of
-                experience crafting digital products that make a difference. My
-                journey started with a curiosity for how things work on the web,
-                and it has evolved into a deep expertise in modern frontend
-                technologies.
-              </p>
-              <p>
-                I specialize in React, Next.js, and TypeScript, building
-                everything from sleek landing pages to complex enterprise
-                applications. My approach combines technical excellence with a
-                keen eye for design and user experience.
-              </p>
-              <p>
-                When I'm not coding, you'll find me exploring new technologies,
-                contributing to open-source projects, or sharing knowledge with
-                the developer community.
-              </p>
-            </div>
+            <p className="mb-4">
+  I'm a passionate and motivated software engineering student with a strong
+  interest in web development. I enjoy building responsive and user-friendly
+  applications while continuously improving my skills.
+</p>
+
+<p className="mb-4">
+  I work with modern technologies across both frontend and backend development:
+</p>
+
+<div className="flex flex-wrap gap-3 mb-4">
+  {[
+    "HTML",
+    "CSS",
+    "Tailwind CSS",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "MongoDB",
+  ].map((skill) => (
+    <span
+      key={skill}
+      className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition"
+    >
+      {skill}
+    </span>
+  ))}
+</div>
+
+<p>
+  As a fresher, I am eager to apply my knowledge, gain real-world experience,
+  and grow as a full-stack developer.
+</p>
 
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
